@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: test
+
+discount:
+  percentage: 0.2
+  max-amount: 100
+
+input:
+  limit: 150
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev,test
+
+discount:
+  percentage: 0.1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+discount:
+  max-amount: 250
+
+input:
+  limit: 200
